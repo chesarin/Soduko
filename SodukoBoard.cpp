@@ -53,3 +53,43 @@ void SodukoBoard::get_square(int square){
     }
   }
 }
+void SodukoBoard::get_row(int row){
+  cout << "row " << row << endl;
+  if ( mrow[0] != row ){
+    mrow[0] = row;
+    for( int sentinel=1; sentinel < 10 ; sentinel++){
+      mrow[sentinel] = 0;
+    }
+    for( int sentinel=1; sentinel < 10 ; sentinel++){
+      if ( board[row][sentinel] > 0 )
+	mrow[board[row][sentinel]] = 1;
+      // cout << board[row][sentinel] ;
+    }
+  }
+  for ( int sentinel=0; sentinel < 10 ; sentinel++){
+    cout << sentinel << " " << mrow[sentinel] << " ";
+  }
+  cout << endl;
+}
+void SodukoBoard::get_column(int column){
+  cout << "column " << column << endl;
+  if ( mcolumn[0] != column ){
+    mcolumn[0] = column;
+    for( int sentinel=1; sentinel < 10 ; sentinel++){
+      mcolumn[sentinel] = 0;
+    }
+    for( int sentinel=1; sentinel < 10 ; sentinel++){
+      if ( board[sentinel][column] > 0 )
+	mcolumn[board[sentinel][column]] = 1;
+      // cout << board[sentinel][column] ;
+    }
+  }
+  for ( int sentinel=0; sentinel < 10 ; sentinel++){
+    cout << sentinel << " " << mcolumn[sentinel] << " ";
+  }
+  // for ( int i = 1 ; i < 10 ; i++ )
+  // for ( int j = column ; j < column+1 ; j++ )
+  // cout << board[i][j] ;
+  cout << endl;
+  
+}
