@@ -17,5 +17,7 @@ class SodukoBoard{
   void get_square(int square);
   void get_row(int row);
   void get_column(int column);
+  void get_options();
+  void solve();
 };
 #endif
