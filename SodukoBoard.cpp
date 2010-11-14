@@ -51,6 +51,15 @@ void SodukoBoard::get_square(int square){
       if ( board[row][column] > 0 )
 	msquare[board[row][column]] = 1;
     }
+    for ( int i = 1 ; i < 19 ; i+=2 ){
+      row=squarematrix[square][i]; column=squarematrix[square][i+1];
+      get_row(row); get_column(column);
+      cout << "row = " << row << "column " << column << endl;
+      if ( board[row][column] != 0 )
+	cout << "options is a singleton " << board[row][column] << endl;
+      else
+	get_options();
+    }
   }
 }
 void SodukoBoard::get_row(int row){
@@ -92,4 +101,18 @@ void SodukoBoard::get_column(int column){
   // cout << board[i][j] ;
   cout << endl;
   
+}
+void SodukoBoard::get_options(){
+  cout << "And the options are " << endl;
+  for ( int i=1 ; i < 10 ; i++ ){
+    if ( mrow[i]+mcolumn[i]+msquare[i] == 0 )
+      cout << i << " " ;
+  }
+  cout << endl;  
+}
+void SodukoBoard::solve(){
+  cout << "Let's try to solve the puzzle" << endl;
+  for ( int i=1 ; i < 10 ; i++){
+    get_square(i);
+  }
 }
