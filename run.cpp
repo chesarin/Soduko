@@ -8,7 +8,7 @@ int main(){
   test1.print_board();
   prompt();
   test1.print_board();
-  test1.solve();
+  //  test1.solve();
   //  Square test1;
   //  test1.print_values();
   //cout << "Let's start adding values " << endl;

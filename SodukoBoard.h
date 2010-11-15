@@ -3,10 +3,12 @@
 #define MAX 10
 #include <iostream>
 #include <sstream>
+#include "Square.h"
 using namespace std;
 class SodukoBoard{
  private:
-  int board[MAX][MAX]; 
+  Square board[MAX][MAX];
+  //  int board[MAX][MAX]; 
   int msquare[10];
   int mrow[10];
   int mcolumn[10];
